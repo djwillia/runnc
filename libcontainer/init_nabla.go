@@ -27,7 +27,7 @@ import (
 )
 
 var (
-	NablaBinDir       = "/opt/runnc/bin/"
+	NablaBinDir       = "/opt/runnc-memlfs/bin/"
 	NablaRunncContBin = NablaBinDir + "runnc-cont"
 	NablaRunBin       = NablaBinDir + "nabla-run"
 )
