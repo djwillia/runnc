@@ -62,11 +62,14 @@ func CreateIso(dir string, target *string) (string, error) {
 		return "", errors.Wrap(err, "Unable to resolve abs dir path")
 	}
 
-	cmd := exec.Command("genisoimage", "-m", "dev", "-m", "sys",
-		"-m", "proc", "-l", "-r", "-o", fname, absDir)
-	err = cmd.Run()
+	// cmd := exec.Command("genisoimage", "-m", "dev", "-m", "sys",
+	// 	"-m", "proc", "-l", "-r", "-o", fname, absDir)
+	cmd := exec.Command("genext2hack", absDir, "512M", fname)
+	//err = cmd.Run()
+	out, err := cmd.CombinedOutput()
 	if err != nil {
-		return "", errors.Wrap(err, "Unable to run geniso command")
+		//return "", errors.Wrap(err, "Unable to run geniso command")
+		return "", errors.Wrap(err, string(out))
 	}
 
 	return fname, nil

@@ -21,7 +21,7 @@ BIN_PATH=/usr/local/bin/
 
 # We add binaries like runnc and nabla-run to /opt/X since they are not
 # to be consumed directly by the user.
-BIN_PATH2=/opt/runnc/bin/
+BIN_PATH2=/opt/runnc-ext2/bin/
 
 COPY_BINS=("runnc" "nabla-run")
 
@@ -38,7 +38,7 @@ else
 
     for i in ${COPY_BINS[@]}; do
         echo "Copying " $i
-        cp build/$i ${BIN_PATH}/
+        # cp build/$i ${BIN_PATH}/
         cp build/$i ${BIN_PATH2}/
     done
 fi

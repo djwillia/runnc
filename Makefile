@@ -46,7 +46,7 @@ container-build:
 
 container-install:
 	sudo docker build . -f Dockerfile.build -t runnc-build
-	sudo docker run --rm -v /opt/runnc/:/opt/runnc/ -v /usr/local/bin:/usr/local/bin -v ${PWD}:/go/src/github.com/nabla-containers/runnc -w /go/src/github.com/nabla-containers/runnc runnc-build make install
+	sudo docker run --rm -v /opt/runnc-ext2/:/opt/runnc-ext2/ -v /usr/local/bin:/usr/local/bin -v ${PWD}:/go/src/github.com/nabla-containers/runnc -w /go/src/github.com/nabla-containers/runnc runnc-build make install
 
 container-uninstall:
 	sudo docker rmi -f runnc-build

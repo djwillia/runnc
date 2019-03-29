@@ -29,7 +29,7 @@ import (
 )
 
 var (
-	NablaBinDir = "/opt/runnc/bin/"
+	NablaBinDir = "/opt/runnc-ext2/bin/"
 	NablaRunBin = NablaBinDir + "nabla-run"
 )
 
